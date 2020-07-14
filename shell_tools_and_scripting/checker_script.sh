@@ -1,10 +1,16 @@
 #!/bin/bash
 
-./failing_script
+count=0
 
-if [[$? -eq 0]]; then
-    ./$0
-else
-    
-
+while :
+do
+    out="$(/Users/sajal/learning/missing-semester/shell_tools_and_scripting/failing_script.sh 2>&1)"
+    if [[ $? -eq 0 ]]; then
+        ((count++))
+    else
+        echo "$out" | tee output.txt
+        echo "Failed after $count runs."
+        break
+    fi
+done
 

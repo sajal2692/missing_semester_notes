@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 n=$(( RANDOM % 100 ))
 
